@@ -34,6 +34,9 @@
   :ensure t
   :config
   (ido-mode t)
+  ;; Disable automatic file name completion for recent files, this feature
+  ;; causes the directory to change awkwardly while typing a file name
+  (setq ido-auto-merge-work-directories-length -1)
   (setq ido-enable-flex-matching t))
 
 (use-package ido-vertical-mode
