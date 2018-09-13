@@ -5,7 +5,12 @@
 
 (defun kill-all-buffers ()
     "Kill all buffers."
-    (interactive)
+   (interactive)
     (mapc 'kill-buffer (buffer-list)))
+
+(defun prompt-user-for-word(prompt)
+  "Prompts for input from the user, using the word at point as default value."
+  (let ((default (thing-at-point 'word)))
+    (read-string (concat prompt " (" default "): ") nil nil default)))
 
 (provide 'util)

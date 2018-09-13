@@ -44,6 +44,7 @@
 (require 'my-ni-packages)
 (require 'my-config)
 (require 'util)
+(require 'git-util)
 (require 'python-util)
 (require 'my-keybindings)
 (require 'my-preferences)

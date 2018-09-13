@@ -33,8 +33,8 @@
 (global-set-key (kbd "C-c 4 o i") 'ni-package-file-open-include-other-window)
 (global-set-key (kbd "C-c o m") 'ni-component-dirs-open-makefile)
 (global-set-key (kbd "C-c o e") 'ni-directory-open-file-in-explorer)
-(global-set-key (kbd "C-c n")  'ni-directory-visit-next-file-with-base-name)
-(global-set-key (kbd "C-c 4 n") 'ni-directory-visit-next-file-with-base-name-other-window)
+(global-set-key (kbd "C-c o n")  'ni-directory-visit-next-file-with-base-name)
+(global-set-key (kbd "C-c 4 o n") 'ni-directory-visit-next-file-with-base-name-other-window)
 (global-set-key (kbd "C-c o f") 'ni-component-dirs-file-open-source-file)
 (global-set-key (kbd "C-c 4 o f") 'ni-component-dirs-file-open-source-file-other-window)
 
@@ -45,8 +45,11 @@
 (global-set-key (kbd "C-c i h") 'ni-insert-code-file-header)
 (global-set-key (kbd "C-c i i") 'ni-insert-code-include-guards)
 
-;; Keymaps for grep
-(global-set-key (kbd "C-c g") 'ni-grep-interactive)
+;; Keymaps for grep NI project
+(global-set-key (kbd "C-c n g") 'ni-grep-interactive)
+
+;; Keymaps for git
+(global-set-key (kbd "C-c g g") 'grep-git-repository)
 
 ;; Keymaps for display info
 (global-set-key (kbd "C-c f w") 'ni-util-set-file-writable)
