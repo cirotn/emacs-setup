@@ -68,6 +68,11 @@
   (if (display-graphic-p) (powerline-default-theme))
   (setq powerline-default-separator 'box))
 
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode))
+
 ;;(use-package magit
 ;;  :ensure t
 ;;  :config
