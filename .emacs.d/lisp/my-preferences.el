@@ -36,9 +36,9 @@
 
 ;; Indentation
 (setq-default indent-tabs-mode nil)
-(setq tab-width 3)
+(setq tab-width 4)
 (setq indent-line-function 'insert-tab)
-(setq c-default-style "bsd" c-basic-offset 3)
+(setq c-default-style "bsd" c-basic-offset 4)
 (c-set-offset 'arglist-cont-nonempty '+)
 (c-set-offset 'arglist-close 'c-lineup-close-paren)
 

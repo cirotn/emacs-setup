@@ -32,7 +32,7 @@
   (add-hook 'c++-mode-hook (lambda () (setq evil-shift-width c-basic-offset)))
   (add-hook 'c-mode-hook (lambda () (setq evil-shift-width c-basic-offset)))
   (add-hook 'package-mode-hook (lambda() (setq evil-shift-width 3)))
-  (add-hook 'makefile-mode-hook (lambda() (setq evil-shift-width 3))))
+  (add-hook 'makefile-mode-hook (lambda() (setq evil-shift-width 4))))
 
 (use-package ido
   :ensure t
