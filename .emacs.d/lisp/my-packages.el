@@ -15,7 +15,11 @@
   (evil-mode 1)
   ;; Make evil forward work with symbols rather than words, in whatever way
   ;; symbols are defined in the current emacs mode
-  (defalias #'forward-evil-word #'forward-evil-symbol)
+  (add-hook 'python-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'c++-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'c-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'makefile-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'package-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
   ;; Leave M-. for tag, to allow use of C-u M-. for next tag (seems to work better than C-])
   (define-key evil-normal-state-map (kbd "M-.") nil)
   ;; Use space to scroll up and down
