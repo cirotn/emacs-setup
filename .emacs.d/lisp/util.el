@@ -13,4 +13,24 @@
   (let ((default (thing-at-point 'word)))
     (read-string (concat prompt " (" default "): ") nil nil default)))
 
+(defmacro with-file (file-path &rest body)
+  "Executes BODY in a buffer visiting the file at FILE-PATH.  If
+file at FILE-PATH is already open, use that buffer temporarily.
+If not visiting the file already, the file will be visited
+temporarily until the end of this macro.  The result of its last
+embedded expression is returned."
+  `(save-excursion
+     (let ((file-buffer (find-buffer-visiting ,file-path))
+           (buffer-created nil)
+           (result-of-last-body-expr nil))
+       (if file-buffer
+           (set-buffer file-buffer)
+         (find-file ,file-path)
+         (setq buffer-created t))
+       ,@(butlast body)
+       (setq result-of-last-body-expr ,@(last body))
+       (when buffer-created
+         (kill-buffer file-buffer))
+       result-of-last-body-expr)))
+
 (provide 'util)
