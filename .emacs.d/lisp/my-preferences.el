@@ -42,6 +42,16 @@
 (c-set-offset 'arglist-cont-nonempty '+)
 (c-set-offset 'arglist-close 'c-lineup-close-paren)
 
+(add-hook 'verilog-mode-hook (lambda()
+                               (setq tab-width 2)
+                               (setq verilog-indent-level 2)
+                               (setq verilog-case-indent 2)
+                               (setq verilog-cexp-indent 2)
+                               (setq verilog-indent-level-behavioral 2)
+                               (setq verilog-indent-level-declaration 2)
+                               (setq verilog-indent-level-module 2)
+                               (setq verilog-auto-newline nil)))
+
 ;; Theme for terminals
 (if (not (display-graphic-p)) (load-theme 'manoj-dark))
 
