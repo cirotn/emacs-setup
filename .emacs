@@ -17,7 +17,7 @@
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
  '(package-selected-packages
    (quote
-    (jedi ido-vertical-mode helm undo-tree magit p4 nlinum-relative linum-relative iedit framemove evil etags-select csharp-mode buffer-move auto-complete)))
+    (find-files-in-repository find-file-in-repository jedi ido-vertical-mode helm undo-tree magit p4 nlinum-relative linum-relative iedit framemove evil etags-select csharp-mode buffer-move auto-complete)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -45,6 +45,7 @@
 (require 'my-config)
 (require 'util)
 (require 'git-util)
+(require 'grep-util)
 (require 'python-util)
 (require 'my-keybindings)
 (require 'my-preferences)

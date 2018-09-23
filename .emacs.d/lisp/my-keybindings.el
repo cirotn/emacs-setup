@@ -45,11 +45,8 @@
 (global-set-key (kbd "C-c i h") 'ni-insert-code-file-header)
 (global-set-key (kbd "C-c i i") 'ni-insert-code-include-guards)
 
-;; Keymaps for grep NI project
-(global-set-key (kbd "C-c n g") 'ni-grep-interactive)
-
-;; Keymaps for git
-(global-set-key (kbd "C-c g g") 'grep-git-repository)
+;; Keymaps for grep
+(global-set-key (kbd "C-c g") 'grep-auto-select)
 
 ;; Keymaps for display info
 (global-set-key (kbd "C-c f w") 'ni-util-set-file-writable)
