@@ -57,4 +57,10 @@ embedded expression is returned."
   (setq show-trailing-whitespace (if show-trailing-whitespace nil t))
   (redraw-frame))
 
+(defun set-file-writable ()
+  "Makes a file writable."
+  (interactive)
+  (set-file-modes buffer-file-name 0666)
+  (revert-buffer :ignore-auto :noconfirm))
+
 (provide 'util)

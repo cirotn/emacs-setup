@@ -109,10 +109,4 @@ given, this function returns a list of match strings."
       (setq current-directory-list (cdr current-directory-list)))
     files-list))
 
-(defun ni-util-set-file-writable ()
-  "Makes a file writable."
-  (interactive)
-  (set-file-modes buffer-file-name 0666)
-  (revert-buffer :ignore-auto :noconfirm))
-
 (provide 'ni-emacs/util)

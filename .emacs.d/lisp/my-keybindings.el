@@ -49,7 +49,7 @@
 (global-set-key (kbd "C-c g") 'grep-auto-select)
 
 ;; Keymaps for display info
-(global-set-key (kbd "C-c f w") 'ni-util-set-file-writable)
+(global-set-key (kbd "C-c f w") 'set-file-writable)
 
 ;; Browser
 (global-set-key (kbd "C-c b g") 'ni-browse-google)
