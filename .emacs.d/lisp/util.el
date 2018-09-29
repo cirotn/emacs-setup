@@ -47,4 +47,14 @@ embedded expression is returned."
      (shell-command (concat "xdg-open " (file-name-directory (buffer-file-name))) t t))
     ))
 
+(defun display-current-buffer-path()
+  "Prints path of current buffer in a message."
+  (interactive)
+  (message (buffer-file-name)))
+
+(defun toggle-show-trailing-ws()
+  (interactive)
+  (setq show-trailing-whitespace (if show-trailing-whitespace nil t))
+  (redraw-frame))
+
 (provide 'util)

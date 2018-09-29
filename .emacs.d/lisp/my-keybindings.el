@@ -39,7 +39,7 @@
 (global-set-key (kbd "C-c 4 o f") 'ni-component-dirs-file-open-source-file-other-window)
 
 ;; Keymaps for display info
-(global-set-key (kbd "C-c d p") 'ni-util-display-current-buffer-path)
+(global-set-key (kbd "C-c d p") 'display-current-buffer-path)
 
 ;; Keymaps for inserting code
 (global-set-key (kbd "C-c i h") 'ni-insert-code-file-header)
@@ -61,7 +61,7 @@
 (global-set-key (kbd "C-c w s") (lambda() (interactive) (w32-send-sys-command #xf130))) ;; start menu
 (global-set-key (kbd "C-c w m") (lambda() (interactive) (w32-send-sys-command #xf030))) ;; maximize
 (global-set-key (kbd "C-c w n") (lambda() (interactive) (w32-send-sys-command #xf020))) ;; minimize
-(global-set-key (kbd "C-c w w") 'ni-util-toggle-show-trailing-ws)
+(global-set-key (kbd "C-c w w") 'toggle-show-trailing-ws)
 
 ;; Keymaps for etags
 (global-set-key (kbd "C-c t v") 'ni-ctags-visit-tags-table)

@@ -1,14 +1,6 @@
 ;; FILE: util.el
 ;; DESC: Utility unctions of a general nature.
 
-(defun ni-util-display-current-buffer-path()
-  "Prints path of current buffer in a message."
-  (interactive)
-  (message (buffer-file-name)))
-
-;; Test
-;; (ni-print-file-path)
-
 (defmacro with-file (file-path &rest body)
   "Executes BODY in a buffer visiting the file at FILE-PATH.  If
 file at FILE-PATH is already open, use that buffer temporarily.
@@ -93,14 +85,6 @@ given, this function returns a list of match strings."
 ;; Tests
 ;; (equal (ni-util-join '("one" "two" "three") ", ") "one, two, three")
 ;; (equal (ni-util-join '("one" "two" "three") " ") "one two three")
-
-(defun ni-util-toggle-show-trailing-ws()
-  (interactive)
-  (setq show-trailing-whitespace (if show-trailing-whitespace nil t))
-  (redraw-frame))
-
-;; Tests
-;; (ni-util-toggle-show-trailing-ws)
 
 (defun ni-util-directory-files-recursive (directory)
   "List files in DIRECTORY and in its sub-directories."
