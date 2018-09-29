@@ -32,7 +32,7 @@
 (global-set-key (kbd "C-c o i") 'ni-package-file-open-include)
 (global-set-key (kbd "C-c 4 o i") 'ni-package-file-open-include-other-window)
 (global-set-key (kbd "C-c o m") 'ni-component-dirs-open-makefile)
-(global-set-key (kbd "C-c o e") 'ni-directory-open-file-in-explorer)
+(global-set-key (kbd "C-c o e") 'open-file-folder-in-gui)
 (global-set-key (kbd "C-c o n")  'ni-directory-visit-next-file-with-base-name)
 (global-set-key (kbd "C-c 4 o n") 'ni-directory-visit-next-file-with-base-name-other-window)
 (global-set-key (kbd "C-c o f") 'ni-component-dirs-file-open-source-file)

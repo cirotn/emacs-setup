@@ -33,4 +33,18 @@ embedded expression is returned."
          (kill-buffer file-buffer))
        result-of-last-body-expr)))
 
+(defun open-file-folder-in-gui()
+  "Open folder pointing to the directory of the current buffer."
+  (interactive)
+  (cond
+    ((string-equal system-type "windows-nt")
+     (shell-command (concat "explorer " (replace-regexp-in-string "/" "\\" (file-name-directory (buffer-file-name)) t t)))
+     (message "")) ;; Clear annoying message about command returning 1
+    ((string-equal system-type "darwin")
+     (message "Not implemented yet"))
+    (t
+     ;; Setup for other systems (Linux)
+     (shell-command (concat "xdg-open " (file-name-directory (buffer-file-name))) t t))
+    ))
+
 (provide 'util)
