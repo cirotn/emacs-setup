@@ -51,11 +51,6 @@
 ;; Keymaps for display info
 (global-set-key (kbd "C-c f w") 'set-file-writable)
 
-;; Browser
-(global-set-key (kbd "C-c b g") 'ni-browse-google)
-(global-set-key (kbd "C-c b c") 'ni-browse-cplusplus)
-(global-set-key (kbd "C-c b m") 'ni-browse-msdn)
-
 ;; Keymaps for changing window appearance
 (global-set-key (kbd "C-c w t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c w s") (lambda() (interactive) (w32-send-sys-command #xf130))) ;; start menu

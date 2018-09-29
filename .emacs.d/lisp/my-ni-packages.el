@@ -1,6 +1,5 @@
 ;; NI-Emacs
 (require 'ni-emacs/util)
-(require 'ni-emacs/browse)
 (require 'ni-emacs/directory)
 (require 'ni-emacs/grep)
 (require 'ni-emacs/insert-code)
