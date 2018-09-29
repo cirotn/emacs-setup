@@ -73,10 +73,15 @@
   (if (display-graphic-p) (powerline-default-theme))
   (setq powerline-default-separator 'box))
 
-(use-package projectile
+(use-package find-file-in-repository
   :ensure t
   :config
-  (projectile-mode))
+  (global-set-key (kbd "C-x C-f") 'find-file-in-repository))
+
+;;(use-package projectile
+;;  :ensure t
+;;  :config
+;;  (projectile-mode))
 
 ;;(use-package magit
 ;;  :ensure t
