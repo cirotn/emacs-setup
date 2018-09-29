@@ -3,17 +3,6 @@
 
 (require 'ni-emacs/util)
 
-(defun ni-directory-open-file-in-explorer()
-  "Open Windows folder pointing to the directory of the current buffer."
-  (interactive)
-  (progn
-    (shell-command (concat "explorer " (replace-regexp-in-string "/" "\\" (file-name-directory (buffer-file-name)) t t)))
-    (message "") ;; Clear annoying message about command returning 1
-    ))
-
-;; Test
-;; (ni-directory-open-file-in-explorer)
-
 (defun ni-directory-path-correct (input-path)
   "Replaces any backslashes in a path to forward slashes.  Also,
 makes sure that the last character is not a slash."
