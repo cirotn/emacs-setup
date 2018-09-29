@@ -14,29 +14,6 @@
 ;; Test
 ;; (ni-directory-open-file-in-explorer)
 
-;; TODO: this seems unused, remove it
-(defun ni-files-in-directory (directory)
-    "List the files in DIRECTORY and in its sub-directories."
-    (let (files-list
-          (current-directory-list (directory-files-and-attributes directory t)))
-         (while current-directory-list
-           (if (car (cdr (car current-directory-list))) ;; directory
-             (if (equal "." (substring (car (car current-directory-list)) -1))
-                 ();; skip . or ..
-               (setq files-list
-                     (append
-                      (ni-files-in-directory
-                       (car (car current-directory-list)))
-                      files-list)))
-               (setq files-list (cons (car (car current-directory-list)) files-list)))
-           ;; move to the next filename in the list
-           (setq current-directory-list (cdr current-directory-list)))
-         ;; return the filenames
-         files-list))
-
-;; Test
-;; (ni-files-in-directory "C:\\Windows\\System32\\drivers")
-
 (defun ni-directory-path-correct (input-path)
   "Replaces any backslashes in a path to forward slashes.  Also,
 makes sure that the last character is not a slash."
