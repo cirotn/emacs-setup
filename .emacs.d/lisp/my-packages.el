@@ -76,7 +76,7 @@
 (use-package find-file-in-repository
   :ensure t
   :config
-  (global-set-key (kbd "C-x C-f") 'find-file-in-repository))
+  (global-set-key (kbd "C-x f") 'find-file-in-repository))
 
 ;;(use-package projectile
 ;;  :ensure t
