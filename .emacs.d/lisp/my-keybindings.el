@@ -1,8 +1,7 @@
-;; Map C-x C-c to kell other buffers
-(global-set-key (kbd "C-x C-c") 'kill-all-buffers)
-
-;; Keymap for new buffer
-(global-set-key (kbd "C-x C-n") 'new-empty-buffer)
+;; Keymap for buffers
+(global-set-key (kbd "C-c b n") 'new-empty-buffer)
+(global-set-key (kbd "C-c b k") 'kill-all-buffers)
+(global-set-key (kbd "C-c b r") 'revert-buffer)
 
 ;; Keymap for windmove
 (global-set-key (kbd "C-c h") 'windmove-left)
