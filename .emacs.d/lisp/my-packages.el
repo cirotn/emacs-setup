@@ -102,4 +102,7 @@
 ;;     (define-key yas-minor-mode-map (kbd "TAB") nil)
 ;;     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
+(require 'framemove)
+(setq framemove-hook-into-windmove t)
+
 (provide 'my-packages)
