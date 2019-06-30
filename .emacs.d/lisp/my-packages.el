@@ -70,7 +70,8 @@
 (use-package powerline
   :ensure t
   :config
-  (if (display-graphic-p) (powerline-default-theme))
+  (require 'my-powerline-theme)
+  (if (display-graphic-p) (my-powerline-theme))
   (setq powerline-default-separator 'box))
 
 (use-package find-file-in-repository
