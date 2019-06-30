@@ -78,6 +78,11 @@
   :config
   (global-set-key (kbd "C-x f") 'find-file-in-repository))
 
+(use-package ace-window
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x o") 'ace-window))
+
 ;;(use-package projectile
 ;;  :ensure t
 ;;  :config
