@@ -67,6 +67,7 @@
 ;; Turn-off trailing whitespace highlight in shell mode
 (add-hook 'comint-mode-hook (lambda() (setq show-trailing-whitespace nil)))
 (add-hook 'shell-mode-hook (lambda() (linum-mode -1)))
+(add-hook 'cmake-mode-hook (lambda() (modify-syntax-entry ?_ "w")))
 
 ;; Set compilation mode options
 (add-hook 'compilation-mode-hook (lambda ()
