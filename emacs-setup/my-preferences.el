@@ -1,3 +1,6 @@
+;; Theme
+(load-theme 'deeper-blue)
+
 ;; Start maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -6,6 +9,9 @@
 
 ;; show matching paren when cursor is on top
 (show-paren-mode t)
+
+;; Hide toolbar
+(tool-bar-mode -1)
 
 ;; show column number in mode bar
 (setq column-number-mode t)
