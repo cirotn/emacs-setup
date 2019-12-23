@@ -52,10 +52,8 @@
 
 ;; Keymaps for changing window appearance
 (global-set-key (kbd "C-c w t") 'toggle-truncate-lines)
-(global-set-key (kbd "C-c w s") (lambda() (interactive) (w32-send-sys-command #xf130))) ;; start menu
-(global-set-key (kbd "C-c w m") (lambda() (interactive) (w32-send-sys-command #xf030))) ;; maximize
-(global-set-key (kbd "C-c w n") (lambda() (interactive) (w32-send-sys-command #xf020))) ;; minimize
 (global-set-key (kbd "C-c w w") 'toggle-show-trailing-ws)
+(global-set-key (kbd "C-c w r") 'fci-mode)
 
 ;; Keymaps for etags
 (global-set-key (kbd "C-c t v") 'ni-ctags-visit-tags-table)
