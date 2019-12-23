@@ -1,5 +1,6 @@
-(require 'git-util)
+;;(require 'git-util)
 (require 'ni-emacs/grep)
+(require 'counsel)
 (require 'vc-git)
 
 (defun grep-auto-select ()
@@ -8,6 +9,7 @@
   (let ((git-root (vc-git-root buffer-file-name)))
     (if (null git-root)
         (ni-grep-interactive)
-      (grep-git-repository))))
+      ;;(grep-git-repository)
+      (counsel-git-grep))))
 
 (provide 'grep-util)
