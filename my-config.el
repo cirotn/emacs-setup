@@ -12,12 +12,12 @@
     (setq perforce-clientspec  "cnishigu_ctn-dt")
     (setq penguin-clientspec   "cnishigu_ctn-dt")
     (global-set-key (kbd "C-c o o") (lambda() (interactive) (find-file "C:/Users/cnishigu/Dropbox/orgmode")))
+    ;; Exclude all files with boost in the file path from etags to keep file size manageable
+    ;;(setq ni-ctags-ectags-options (concat ni-ctags-ectags-options " --exclude=boost")
     ;; Python path
     (setq python-shell-interpreter "C:/Users/cnishigu/AppData/Local/Programs/Python/Python36/pythonw.exe")
     ;; Removes shell warning about readline when starting python
-    (setq python-shell-completion-native-enable nil)
-    ;; Exclude all files with boost in the file path from etags to keep file size manageable
-    (setq ni-ctags-ectags-options (concat ni-ctags-ectags-options " --exclude=boost"))))
+    (setq python-shell-completion-native-enable nil)))
  ((string-equal system-type "darwin")
   ;; Mac OS Setup
   (progn

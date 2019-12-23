@@ -90,12 +90,13 @@
   :config
   (global-set-key (kbd "C-x o") 'ace-window))
 
-(use-package clang-format
-  :ensure t
-  :config
-  (setq clang-format-executable "clang-format-6.0")
-  (global-set-key (kbd "C-c e r") 'clang-format-region)
-  (global-set-key (kbd "C-c e b") 'clang-format-buffer))
+(if (not (string-equal system-type "windows-nt"))
+    (use-package clang-format
+      :ensure t
+      :config
+      (setq clang-format-executable "clang-format-6.0")
+      (global-set-key (kbd "C-c e r") 'clang-format-region)
+      (global-set-key (kbd "C-c e b") 'clang-format-buffer)))
 
 ;;(use-package projectile
 ;;  :ensure t
