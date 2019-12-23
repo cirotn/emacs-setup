@@ -47,8 +47,11 @@
 ;; Keymaps for grep
 (global-set-key (kbd "C-c g") 'grep-auto-select)
 
-;; Keymaps for display info
-(global-set-key (kbd "C-c f w") 'set-file-writable)
+;; Keymaps for formatting
+(if (not (string-equal system-type "windows-nt"))
+    (progn
+      (global-set-key (kbd "C-c f r") 'clang-format-region)
+      (global-set-key (kbd "C-c f b") 'clang-format-buffer)))
 
 ;; Keymaps for changing window appearance
 (global-set-key (kbd "C-c w t") 'toggle-truncate-lines)
