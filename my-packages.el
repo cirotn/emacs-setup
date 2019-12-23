@@ -98,6 +98,13 @@
       (global-set-key (kbd "C-c e r") 'clang-format-region)
       (global-set-key (kbd "C-c e b") 'clang-format-buffer)))
 
+(use-package fill-column-indicator
+  :ensure t
+  :config
+  (setq fci-rule-column 80)
+  (setq fci-rule-width 4)
+  (setq fci-rule-color "darkblue"))
+
 ;;(use-package projectile
 ;;  :ensure t
 ;;  :config
