@@ -79,11 +79,6 @@
   (if (display-graphic-p) (my-powerline-theme))
   (setq powerline-default-separator 'box))
 
-(use-package find-file-in-repository
-  :ensure t
-  :config
-  (global-set-key (kbd "C-x f") 'find-file-in-repository))
-
 ;; When switching windows, number them and ask for the destination
 (use-package ace-window
   :ensure t
@@ -105,10 +100,12 @@
   (setq fci-rule-width 4)
   (setq fci-rule-color "darkblue"))
 
-;;(use-package projectile
-;;  :ensure t
-;;  :config
-;;  (projectile-mode))
+(use-package projectile
+  :ensure t
+  :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (setq projectile-completion-system 'ivy)
+  (projectile-mode +1))
 
 (use-package evil-magit
   :ensure t
@@ -144,6 +141,12 @@
 ;;  :config
 ;;  (ido-vertical-mode 1)
 ;;  (setq ido-vertical-define-keys 'C-n-and-C-p-only))
+
+;; Replaced by projectile
+;; (use-package find-file-in-repository
+;;   :ensure t
+;;   :config
+;;   (global-set-key (kbd "C-x f") 'find-file-in-repository))
 
 (require 'framemove)
 (setq framemove-hook-into-windmove t)
