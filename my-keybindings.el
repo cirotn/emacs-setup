@@ -16,8 +16,7 @@
 (global-set-key (kbd "C-c J") 'buf-move-down)
 
 ;; Keymap for compile
-(global-set-key (kbd "C-c c") 'ni-build)
-(global-set-key (kbd "C-c 4 c") 'ni-build-with-selection)
+(global-set-key (kbd "C-c c") 'compile)
 
 ;; Keymaps for python
 (global-set-key (kbd "C-c p n") 'python-util-new-empty-buffer)
