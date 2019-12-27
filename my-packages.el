@@ -5,6 +5,8 @@
   :ensure t
   :config
   (ivy-mode t)
+  ;; Set the number of minibuffer lines
+  (setq ivy-height 20)
   ;; Set the completion to be fuzzy for files and buffers
   (setq ivy-re-builders-alist
         '((read-file-name-internal . ivy--regex-fuzzy)
