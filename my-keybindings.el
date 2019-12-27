@@ -10,26 +10,8 @@
 (global-set-key (kbd "C-c p n") 'python-util-new-empty-buffer)
 (global-set-key (kbd "C-c p d") 'python-debug-with-pdb)
 
-;; Keymaps for opening files
-(global-set-key (kbd "C-c o p") 'ni-component-dirs-open-package)
-(global-set-key (kbd "C-c 4 o p") 'ni-component-dirs-open-package-other-window)
-(global-set-key (kbd "C-c o d") 'ni-package-file-open-dependency-dir)
-(global-set-key (kbd "C-c 4 o d") 'ni-package-file-open-dependency-dir-other-window)
-(global-set-key (kbd "C-c o i") 'ni-package-file-open-include)
-(global-set-key (kbd "C-c 4 o i") 'ni-package-file-open-include-other-window)
-(global-set-key (kbd "C-c o m") 'ni-component-dirs-open-makefile)
-(global-set-key (kbd "C-c o e") 'open-file-folder-in-gui)
-(global-set-key (kbd "C-c o n")  'ni-directory-visit-next-file-with-base-name)
-(global-set-key (kbd "C-c 4 o n") 'ni-directory-visit-next-file-with-base-name-other-window)
-(global-set-key (kbd "C-c o f") 'ni-component-dirs-file-open-source-file)
-(global-set-key (kbd "C-c 4 o f") 'ni-component-dirs-file-open-source-file-other-window)
-
 ;; Keymaps for display info
 (global-set-key (kbd "C-c d p") 'display-current-buffer-path)
-
-;; Keymaps for inserting code
-(global-set-key (kbd "C-c i h") 'ni-insert-code-file-header)
-(global-set-key (kbd "C-c i i") 'ni-insert-code-include-guards)
 
 ;; Keymaps for grep
 (global-set-key (kbd "C-c g") 'grep-auto-select)
@@ -40,8 +22,6 @@
 ;; (global-set-key (kbd "C-c w r") 'fci-mode)
 
 ;; Keymaps for etags
-(global-set-key (kbd "C-c t v") 'ni-ctags-visit-tags-table)
-(global-set-key (kbd "C-c t c") 'ni-ctags-gen)
 (global-set-key (kbd "C-c t l") 'etags-select-find-tag-at-point)
 (global-set-key (kbd "C-c 4 t l") 'etags-select-find-tag)
 
