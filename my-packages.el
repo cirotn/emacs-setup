@@ -180,7 +180,7 @@
 ;;   :config
 ;;   (global-set-key (kbd "C-x f") 'find-file-in-repository))
 
-(require 'framemove)
-(setq framemove-hook-into-windmove t)
+;; (require 'framemove)
+;; (setq framemove-hook-into-windmove t)
 
 (provide 'my-packages)
