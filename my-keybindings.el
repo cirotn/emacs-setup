@@ -28,4 +28,7 @@
 ;; Redraw display to get around glitch where screen scrambles randomly
 (global-set-key (kbd "C-c r") 'redraw-display)
 
+;; Disable this to avoid hitting it accidentally, evil has its own keys for this
+(global-unset-key (kbd "C-x C-c"))
+
 (provide 'my-keybindings)
