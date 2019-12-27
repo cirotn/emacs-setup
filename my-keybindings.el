@@ -3,18 +3,6 @@
 (global-set-key (kbd "C-c b k") 'kill-all-buffers)
 (global-set-key (kbd "C-c b r") 'revert-buffer)
 
-;; Keymap for windmove
-(global-set-key (kbd "C-c h") 'windmove-left)
-(global-set-key (kbd "C-c l") 'windmove-right)
-(global-set-key (kbd "C-c k") 'windmove-up)
-(global-set-key (kbd "C-c j") 'windmove-down)
-
-;; Keymap for buffer move
-(global-set-key (kbd "C-c H") 'buf-move-left)
-(global-set-key (kbd "C-c L") 'buf-move-right)
-(global-set-key (kbd "C-c K") 'buf-move-up)
-(global-set-key (kbd "C-c J") 'buf-move-down)
-
 ;; Keymap for compile
 (global-set-key (kbd "C-c c") 'compile)
 
@@ -46,16 +34,10 @@
 ;; Keymaps for grep
 (global-set-key (kbd "C-c g") 'grep-auto-select)
 
-;; Keymaps for formatting
-(if (not (string-equal system-type "windows-nt"))
-    (progn
-      (global-set-key (kbd "C-c f r") 'clang-format-region)
-      (global-set-key (kbd "C-c f b") 'clang-format-buffer)))
-
 ;; Keymaps for changing window appearance
 (global-set-key (kbd "C-c w t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c w w") 'toggle-show-trailing-ws)
-(global-set-key (kbd "C-c w r") 'fci-mode)
+;; (global-set-key (kbd "C-c w r") 'fci-mode)
 
 ;; Keymaps for etags
 (global-set-key (kbd "C-c t v") 'ni-ctags-visit-tags-table)

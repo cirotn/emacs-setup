@@ -76,9 +76,21 @@
   :config
   (ac-config-default))
 
-;; Swap buffers with another frame
+;; Swap buffers with another frame. Also pulls in windmove, to move between
+;; frames.
 (use-package buffer-move
-  :ensure t)
+  :ensure t
+  :config
+  ;; Keymap for windmove that use VI direction keys
+  (global-set-key (kbd "C-c h") 'windmove-left)
+  (global-set-key (kbd "C-c l") 'windmove-right)
+  (global-set-key (kbd "C-c k") 'windmove-up)
+  (global-set-key (kbd "C-c j") 'windmove-down)
+  ;; Keymap for buffer move that use VI direction keys
+  (global-set-key (kbd "C-c H") 'buf-move-left)
+  (global-set-key (kbd "C-c L") 'buf-move-right)
+  (global-set-key (kbd "C-c K") 'buf-move-up)
+  (global-set-key (kbd "C-c J") 'buf-move-down))
 
 ;; Configurable status bar with a nice look
 (use-package powerline
@@ -110,7 +122,8 @@
   :config
   (setq fci-rule-column 80)
   (setq fci-rule-width 4)
-  (setq fci-rule-color "darkblue"))
+  (setq fci-rule-color "darkblue")
+  (global-set-key (kbd "C-c w r") 'fci-mode))
 
 ;; Projectile makes it easy to find files in project (C-c p f).
 (use-package projectile
