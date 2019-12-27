@@ -20,6 +20,10 @@
 (use-package swiper
   :ensure t)
 
+;; Counsel provides a variety of functions using the same completion style as
+;; ivy. Ivy only affects emacs functions that call completing-read-function,
+;; counsel adds its own version of emacs commands that are not covered by ivy
+;; alone. See counsel-faces for example, or counsel-git-grep.
 (use-package counsel
   :ensure t)
 
@@ -76,8 +80,8 @@
   :config
   (ac-config-default))
 
-;; Swap buffers with another frame. Also pulls in windmove, to move between
-;; frames.
+;; Swap buffers with another window. Also pulls in windmove, to move between
+;; windows using a direction.
 (use-package buffer-move
   :ensure t
   :config
@@ -125,7 +129,8 @@
   (setq fci-rule-color "darkblue")
   (global-set-key (kbd "C-c w r") 'fci-mode))
 
-;; Projectile makes it easy to find files in project (C-c p f).
+;; Projectile makes it easy to find files in project. Invoke find file using
+;; C-c p f and find file dwim (to find a file at point) using C-c p g.
 (use-package projectile
   :ensure t
   :config
@@ -141,13 +146,20 @@
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
 
+;; Disabling due to lack of use
 ;;(use-package p4
 ;;  :ensure t)
 
+;; Framemove was not working with package manager at one point
 ;;(use-package framemove :ensure t
 ;;  :config
 ;;  (setq framemove-hook-into-windmove t))
 
+;; Disabling due to lack of use
+;; (require 'framemove)
+;; (setq framemove-hook-into-windmove t)
+
+;; Disabling due to lack of use
 ;; (use-package yasnippet :ensure t
 ;;  :config
 ;;     ;;Only load yasnippets from my own directory
@@ -158,7 +170,7 @@
 ;;     (define-key yas-minor-mode-map (kbd "TAB") nil)
 ;;     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
-;; replaced by ivy
+;; Replaced by ivy
 ;;(use-package ido
 ;;  :ensure t
 ;;  :config
@@ -179,8 +191,5 @@
 ;;   :ensure t
 ;;   :config
 ;;   (global-set-key (kbd "C-x f") 'find-file-in-repository))
-
-;; (require 'framemove)
-;; (setq framemove-hook-into-windmove t)
 
 (provide 'my-packages)
