@@ -1,5 +1,6 @@
 (require 'cl)
 
+;; Use ivy for completion of commands
 (use-package ivy
   :ensure t
   :config
@@ -11,20 +12,26 @@
           (t . ivy--regex-plus)))
   ;; Adds recent files to buffer list
   (setq ivy-use-virtual-buffers t)
+  ;; Configure display of number of options
   (setq ivy-count-format "(%d/%d) "))
 
+;; Swiper provides a search (within a buffer) that improves on isearch.
+;; Invoke using M-x swiper-isearch.
 (use-package swiper
   :ensure t)
 
 (use-package counsel
   :ensure t)
 
+;; Undo-tree for storing and displaying multiple undo branches
 (use-package undo-tree
   :ensure t
   :config
+  ;; No trailing whitespace on undo-tree
   (add-hook 'undo-tree-visualizer-mode-hook (lambda() (setq show-trailing-whitespace nil)))
   (global-undo-tree-mode))
 
+;; VI mode emulation
 (use-package evil
   :ensure t
   :config
@@ -52,29 +59,32 @@
   (add-hook 'package-mode-hook (lambda() (setq evil-shift-width 3)))
   (add-hook 'verilog-mode-hook (lambda() (setq evil-shift-width 2))))
 
+;; Edit mulitple occurrences of a string in a buffer at once. Invoke using c-;.
 (use-package iedit
   :ensure t)
 
-;;(use-package p4
-;;  :ensure t)
-
+;; Use relative line numbers
 (use-package linum-relative
   :ensure t
   :config
   (global-linum-mode t)
   (linum-relative-on))
 
+;; Basic emacs auto-complete
 (use-package auto-complete
   :ensure t
   :config
   (ac-config-default))
 
+;; Swap buffers with another frame
 (use-package buffer-move
   :ensure t)
 
+;; Configurable status bar with a nice look
 (use-package powerline
   :ensure t
   :config
+  ;; Using my own custom theme for powerline, but only in graphical displays
   (require 'my-powerline-theme)
   (if (display-graphic-p) (my-powerline-theme))
   (setq powerline-default-separator 'box))
@@ -85,14 +95,16 @@
   :config
   (global-set-key (kbd "C-x o") 'ace-window))
 
+;; Use clang-format if not on Windows
 (if (not (string-equal system-type "windows-nt"))
     (use-package clang-format
       :ensure t
       :config
       (setq clang-format-executable "clang-format-6.0")
-      (global-set-key (kbd "C-c e r") 'clang-format-region)
-      (global-set-key (kbd "C-c e b") 'clang-format-buffer)))
+      (global-set-key (kbd "C-c f r") 'clang-format-region)
+      (global-set-key (kbd "C-c f b") 'clang-format-buffer)))
 
+;; Optionally show a ruler at column 80. Invoke using C-c w r.
 (use-package fill-column-indicator
   :ensure t
   :config
@@ -100,17 +112,24 @@
   (setq fci-rule-width 4)
   (setq fci-rule-color "darkblue"))
 
+;; Projectile makes it easy to find files in project (C-c p f).
 (use-package projectile
   :ensure t
   :config
+  ;; Install command shortcuts under C-c p
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  ;; Use ivy to select the file
   (setq projectile-completion-system 'ivy)
   (projectile-mode +1))
 
+;; Git porcelain with key bindings that work with evil
 (use-package evil-magit
   :ensure t
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
+
+;;(use-package p4
+;;  :ensure t)
 
 ;;(use-package framemove :ensure t
 ;;  :config
