@@ -1,5 +1,4 @@
 ;;(require 'git-util)
-(require 'ni-emacs/grep)
 (require 'counsel)
 (require 'vc-git)
 
@@ -8,8 +7,8 @@
   (interactive)
   (let ((git-root (vc-git-root buffer-file-name)))
     (if (null git-root)
-        (ni-grep-interactive)
+        (counsel-grep (thing-at-point 'word))
       ;;(grep-git-repository)
-      (counsel-git-grep))))
+      (counsel-git-grep (thing-at-point 'word)))))
 
 (provide 'grep-util)
