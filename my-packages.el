@@ -150,6 +150,11 @@
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
 
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+
 ;; Disabling due to lack of use
 ;;(use-package p4
 ;;  :ensure t)
