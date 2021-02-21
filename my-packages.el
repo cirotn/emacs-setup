@@ -150,10 +150,13 @@
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
 
+;; The Emacs python development environment
 (use-package elpy
   :ensure t
   :init
-  (elpy-enable))
+  (elpy-enable)
+  :config
+  (highlight-indentation-mode -1))
 
 ;; Disabling due to lack of use
 ;;(use-package p4
