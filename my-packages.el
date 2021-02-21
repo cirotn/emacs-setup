@@ -144,12 +144,6 @@
   (setq projectile-completion-system 'ivy)
   (projectile-mode +1))
 
-;; Git porcelain with key bindings that work with evil
-(use-package evil-magit
-  :ensure t
-  :config
-  (global-set-key (kbd "C-x g") 'magit-status))
-
 ;; The Emacs python development environment
 (use-package elpy
   :ensure t
