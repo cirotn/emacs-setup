@@ -10,8 +10,9 @@
 ;; show matching paren when cursor is on top
 (show-paren-mode t)
 
-;; Hide toolbar
+;; Hide toolbar and menu bar
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; show column number in mode bar
 (setq column-number-mode t)
