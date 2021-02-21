@@ -158,29 +158,14 @@
   :config
   (highlight-indentation-mode -1))
 
-;; Disabling due to lack of use
-;;(use-package p4
-;;  :ensure t)
+;; Yaml file mode
+(use-package yaml-mode
+  :ensure t)
 
 ;; Framemove was not working with package manager at one point
 ;;(use-package framemove :ensure t
 ;;  :config
 ;;  (setq framemove-hook-into-windmove t))
-
-;; Disabling due to lack of use
-;; (require 'framemove)
-;; (setq framemove-hook-into-windmove t)
-
-;; Disabling due to lack of use
-;; (use-package yasnippet :ensure t
-;;  :config
-;;     ;;Only load yasnippets from my own directory
-;;     (setq-default yas-snippet-dirs "~/.emacs.d/snippets")
-;;     (yas-global-mode 1)
-;;     ;; Make it triggered by shift-tab so it doesn't conflict with auto-complete
-;;     (define-key yas-minor-mode-map (kbd "<tab>") nil)
-;;     (define-key yas-minor-mode-map (kbd "TAB") nil)
-;;     (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand))
 
 ;; Replaced by ivy
 ;;(use-package ido
