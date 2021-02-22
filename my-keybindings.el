@@ -14,7 +14,7 @@
 (evil-leader/set-key
   "bn" 'new-empty-buffer
   "br" 'revert-buffer
-  "bk" 'kill-buffer
+  "bk" 'kill-all-buffers
   "bd" 'kill-current-buffer
   "bb" 'ivy-switch-buffer)
 
