@@ -37,6 +37,13 @@
   (add-hook 'undo-tree-visualizer-mode-hook (lambda() (setq show-trailing-whitespace nil)))
   (global-undo-tree-mode))
 
+;; Use space as a leader. Should come before evil.
+(use-package evil-leader
+  :ensure t
+  :config
+  (evil-leader/set-leader "<SPC>")
+  (global-evil-leader-mode))
+
 ;; VI mode emulation
 (use-package evil
   :ensure t
@@ -52,9 +59,6 @@
   (add-hook 'emacs-lisp-mode-hook '(lambda () (modify-syntax-entry ?- "w")))
   ;; Make asterisk not include \\<...\\>
   (define-key evil-normal-state-map (kbd "*") 'evil-search-unbounded-word-forward)
-  ;; use space to scroll up and down
-  (define-key evil-normal-state-map (kbd "SPC") 'evil-scroll-page-down)
-  (define-key evil-normal-state-map (kbd "S-SPC") 'evil-scroll-page-up)
   ;; evil doesn't auto-indent in insert mode by default
   (define-key evil-insert-state-map (kbd "RET") 'evil-ret-and-indent)
   ;; set shift width according to language
@@ -85,18 +89,7 @@
 ;; Swap buffers with another window. Also pulls in windmove, to move between
 ;; windows using a direction.
 (use-package buffer-move
-  :ensure t
-  :config
-  ;; Keymap for windmove that use VI direction keys
-  (global-set-key (kbd "C-c h") 'windmove-left)
-  (global-set-key (kbd "C-c l") 'windmove-right)
-  (global-set-key (kbd "C-c k") 'windmove-up)
-  (global-set-key (kbd "C-c j") 'windmove-down)
-  ;; Keymap for buffer move that use VI direction keys
-  (global-set-key (kbd "C-c H") 'buf-move-left)
-  (global-set-key (kbd "C-c L") 'buf-move-right)
-  (global-set-key (kbd "C-c K") 'buf-move-up)
-  (global-set-key (kbd "C-c J") 'buf-move-down))
+  :ensure t)
 
 ;; Configurable status bar with a nice look
 (use-package powerline
@@ -137,7 +130,7 @@
   :ensure t
   :config
   ;; Install command shortcuts under C-c p
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (evil-leader/set-key "p" 'projectile-command-map)
   ;; Set alternative key binding for find file
   (global-set-key (kbd "C-x f") 'projectile-find-file)
   ;; Use ivy to select the file

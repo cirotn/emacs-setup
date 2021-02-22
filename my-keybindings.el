@@ -1,32 +1,58 @@
-;; Keymap for buffers
-(global-set-key (kbd "C-c b n") 'new-empty-buffer)
-(global-set-key (kbd "C-c b k") 'kill-all-buffers)
-(global-set-key (kbd "C-c b r") 'revert-buffer)
+;; Find file
+(evil-leader/set-key
+  "<SPC>" 'projectile-find-file)
 
-;; Keymap for compile
-(global-set-key (kbd "C-c c") 'compile)
+;; Execute
+(evil-leader/set-key
+  ":" 'execute-extended-command)
+
+;; Grep
+(evil-leader/set-key
+  "*" 'grep-auto-select)
+
+;; Buffers
+(evil-leader/set-key
+  "bn" 'new-empty-buffer
+  "br" 'revert-buffer
+  "bk" 'kill-buffer
+  "bd" 'kill-current-buffer
+  "bb" 'ivy-switch-buffer)
+
+;; Display info
+(evil-leader/set-key
+  "dp" 'display-current-buffer-path)
+
+;; Window manipulation
+(evil-leader/set-key
+  "w3" 'split-window-right
+  "w2" 'split-window-below
+  "w1" 'delete-other-windows
+  "w0" 'delete-window
+  ;; Windmove
+  "wj" 'windmove-down
+  "wk" 'windmove-up
+  "wh" 'windmove-left
+  "wl" 'windmove-right
+  ;; Buffer move
+  "wJ" 'buf-move-down
+  "wK" 'buf-move-up
+  "wH" 'buf-move-left
+  "wL" 'buf-move-right)
+
+(evil-leader/set-key
+  "`e" 'eval-last-sexp
+  "`r" 'eval-region)
+
+;;  'toggle-truncate-lines
+;;  'toggle-show-trailing-ws
 
 ;; Keymaps for python
-(global-set-key (kbd "C-c p n") 'python-util-new-empty-buffer)
-(global-set-key (kbd "C-c p d") 'python-debug-with-pdb)
-
-;; Keymaps for display info
-(global-set-key (kbd "C-c d p") 'display-current-buffer-path)
-
-;; Keymaps for grep
-(global-set-key (kbd "C-c g") 'grep-auto-select)
-
-;; Keymaps for changing window appearance
-(global-set-key (kbd "C-c w t") 'toggle-truncate-lines)
-(global-set-key (kbd "C-c w w") 'toggle-show-trailing-ws)
-;; (global-set-key (kbd "C-c w r") 'fci-mode)
+;;(global-set-key (kbd "C-c p n") 'python-util-new-empty-buffer)
+;;(global-set-key (kbd "C-c p d") 'python-debug-with-pdb)
 
 ;; Keymaps for etags
-(global-set-key (kbd "C-c t l") 'etags-select-find-tag-at-point)
-(global-set-key (kbd "C-c 4 t l") 'etags-select-find-tag)
-
-;; Redraw display to get around glitch where screen scrambles randomly
-(global-set-key (kbd "C-c r") 'redraw-display)
+;;(global-set-key (kbd "C-c t l") 'etags-select-find-tag-at-point)
+;;(global-set-key (kbd "C-c 4 t l") 'etags-select-find-tag)
 
 ;; Disable this to avoid hitting it accidentally, evil has its own keys for this
 (global-unset-key (kbd "C-x C-c"))
