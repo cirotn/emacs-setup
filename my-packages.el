@@ -134,6 +134,7 @@
   :ensure t
   :config
   ;; Install command shortcuts under C-c p
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (evil-leader/set-key "p" 'projectile-command-map)
   ;; Set alternative key binding for find file
   (global-set-key (kbd "C-x f") 'projectile-find-file)
