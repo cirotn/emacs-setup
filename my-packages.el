@@ -67,7 +67,11 @@
   (add-hook 'c-mode-hook (lambda () (setq evil-shift-width c-basic-offset)))
   (add-hook 'makefile-mode-hook (lambda() (setq evil-shift-width c-basic-offset)))
   (add-hook 'package-mode-hook (lambda() (setq evil-shift-width 3)))
-  (add-hook 'verilog-mode-hook (lambda() (setq evil-shift-width 2))))
+  (add-hook 'verilog-mode-hook (lambda() (setq evil-shift-width 2)))
+  ;; Make escape exit minibuffer instead of requiring Ctrl-g.
+  ;; This is under evil because I think it needs to be loaded after evil
+  ;; loads, but haven't verified that.
+  (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit))
 
 ;; Edit mulitple occurrences of a string in a buffer at once. Invoke using c-;.
 (use-package iedit
