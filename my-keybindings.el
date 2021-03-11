@@ -42,6 +42,7 @@
   "w2" 'split-window-below
   "w1" 'delete-other-windows
   "w0" 'delete-window
+  "wd" 'delete-window
   ;; Windmove
   "wj" 'windmove-down
   "wk" 'windmove-up
@@ -57,6 +58,7 @@
 (global-set-key (kbd "C-c w 2") 'split-window-below)
 (global-set-key (kbd "C-c w 1") 'delete-other-windows)
 (global-set-key (kbd "C-c w 0") 'delete-window)
+(global-set-key (kbd "C-c w d") 'delete-window)
 (global-set-key (kbd "C-c w h") 'windmove-left)
 (global-set-key (kbd "C-c w l") 'windmove-right)
 (global-set-key (kbd "C-c w k") 'windmove-up)
