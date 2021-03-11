@@ -164,7 +164,10 @@
 
 ;; Python formatting
 (use-package blacken
-  :ensure t)
+  :ensure t
+  :config
+  (setq blacken-skip-string-normalization t)
+  (setq blacken-line-length 120))
 
 ;; Yaml file mode
 (use-package yaml-mode
