@@ -152,8 +152,15 @@
   :init
   (elpy-enable)
   :config
-  (setq elpy-rpc-python-command "python3")
+  (setq elpy-rpc-python-command "/home/ciro/miniconda3/bin/python")
   (add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1))))
+
+;; Use conda for python
+(use-package conda
+  :ensure t
+  :init
+  (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
+  (setq conda-env-home-directory (expand-file-name "~/miniconda3")))
 
 ;; Python formatting
 (use-package blacken
