@@ -153,7 +153,10 @@
   (elpy-enable)
   :config
   (setq elpy-rpc-python-command "/home/ciro/miniconda3/bin/python")
-  (add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1))))
+  (add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1)))
+  ;; Workaround for an issue that prints 'error in process filter' and hangs
+  ;; for a few seconds when typing temporarily unbalanced strings
+  (delete 'elpy-module-highlight-indentation elpy-modules))
 
 ;; Use conda for python
 (use-package conda
