@@ -34,8 +34,7 @@
 ;; Provides description when invoking counsel-M-x. Use Alt-o + d to go function definition.
 (use-package ivy-rich
   :ensure t
-  :after
-  (ivy)
+  :after ivy
   :config
   (ivy-rich-mode t))
 
@@ -66,6 +65,7 @@
 ;; VI mode emulation
 (use-package evil
   :ensure t
+  :after evil-leader
   :init
   (setq evil-undo-system 'undo-tree)
   :config
