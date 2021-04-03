@@ -5,7 +5,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; no start up screen
-(setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
 
 ;; show matching paren when cursor is on top
 (show-paren-mode t)
@@ -29,7 +29,7 @@
 ;; Set window title to currently visited buffer name instead of just "emacs"
 (setq frame-title-format "%b")
 
-;; Remove annoying beep
+;; Remove annoying beep, replace with a screen flash
 (setq visible-bell 1)
 
 ;; Truncate long lines by default
@@ -62,9 +62,6 @@
 ;; Theme for terminals
 (if (not (display-graphic-p)) (load-theme 'manoj-dark))
 
-;; Remove buffer still has clients error due to using C-x k with client-server
-(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
-
 ;; Turn-off trailing whitespace highlight in minibuffer (makes ido-vertical look better)
 (add-hook 'minibuffer-setup-hook (lambda() (setq show-trailing-whitespace nil)))
 
@@ -81,6 +78,9 @@
                                    (toggle-truncate-lines)
                                    (setq show-trailing-whitespace nil)))
 
+;; Remove buffer still has clients error due to using C-x k with client-server
+;; (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+
 ;; Semantic
 ;; (semantic-mode 1)
 
@@ -89,7 +89,5 @@
 
 ;; (if (package-installed-p 'auto-complete)
 ;;     (add-hook 'c-mode-common-hook 'add-semantic-to-autocomplete))
-
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 
 (provide 'my-preferences)
