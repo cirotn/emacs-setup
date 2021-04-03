@@ -35,8 +35,9 @@
 ;; Highlight trailing whitespace
 (setq-default show-trailing-whitespace t)
 
-;; No default back-up
-(setq make-backup-files nil)
+;; Keep back-up files out of the way
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
 ;; Indentation
 (setq-default indent-tabs-mode nil)
