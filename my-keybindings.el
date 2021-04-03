@@ -53,6 +53,8 @@
   "wK" 'buf-move-up
   "wH" 'buf-move-left
   "wL" 'buf-move-right
+  ;; Other window
+  "wo" 'ace-window
   ;; Balance windows
   "w+" 'balance-windows)
 
@@ -69,6 +71,7 @@
 (global-set-key (kbd "C-c w L") 'buf-move-right)
 (global-set-key (kbd "C-c w K") 'buf-move-up)
 (global-set-key (kbd "C-c w J") 'buf-move-down)
+(global-set-key (kbd "C-c w o") 'ace-window)
 (global-set-key (kbd "C-c w +") 'balance-windows)
 
 ;; Lisp evaluation
