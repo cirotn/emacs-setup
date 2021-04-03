@@ -56,7 +56,11 @@
   ;; Other window
   "wo" 'ace-window
   ;; Balance windows
-  "w+" 'balance-windows)
+  "w+" 'balance-windows
+  ;; Zoom
+  "wz" 'hydra-zoom/body
+  ;; Move window split
+  "ws" 'hydra-splitter/body)
 
 (global-set-key (kbd "C-c w 3") 'split-window-right)
 (global-set-key (kbd "C-c w 2") 'split-window-below)
@@ -73,6 +77,8 @@
 (global-set-key (kbd "C-c w J") 'buf-move-down)
 (global-set-key (kbd "C-c w o") 'ace-window)
 (global-set-key (kbd "C-c w +") 'balance-windows)
+(global-set-key (kbd "C-c w z") 'hydra-zoom/body)
+(global-set-key (kbd "C-c w s") 'hydra-splitter/body)
 
 ;; Lisp evaluation
 (evil-leader/set-key

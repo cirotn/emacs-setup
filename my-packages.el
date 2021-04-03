@@ -158,6 +158,22 @@
   (setq projectile-completion-system 'ivy)
   (projectile-mode +1))
 
+;; Hydra is useful for changing a set interactively
+(use-package hydra
+  :ensure t)
+
+(defhydra hydra-zoom()
+  "zoom"
+  ("+" text-scale-increase "in")
+  ("-" text-scale-decrease "out"))
+
+(defhydra hydra-splitter()
+  "splitter"
+  ("h" lambda() (hydra-move-splitter-left 1))
+  ("j" lambda() (hydra-move-splitter-down 1))
+  ("k" lambda() (hydra-move-splitter-up 1))
+  ("l" lambda() (hydra-move-splitter-right 1)))
+
 ;; The Emacs python development environment
 (use-package elpy
   :ensure t
