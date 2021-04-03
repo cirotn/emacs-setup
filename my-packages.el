@@ -1,5 +1,3 @@
-(require 'cl)
-
 ;; Use ivy for completion of commands
 (use-package ivy
   :ensure t
