@@ -1,6 +1,3 @@
-;; Theme
-(load-theme 'deeper-blue)
-
 ;; Start maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
@@ -60,7 +57,7 @@
                                (setq verilog-auto-newline nil)))
 
 ;; Theme for terminals
-(if (not (display-graphic-p)) (load-theme 'manoj-dark))
+(if (not (display-graphic-p)) (load-theme 'wombat))
 
 ;; Turn-off trailing whitespace highlight in minibuffer (makes ido-vertical look better)
 (add-hook 'minibuffer-setup-hook (lambda() (setq show-trailing-whitespace nil)))

@@ -2,6 +2,12 @@
 (use-package diminish
   :ensure t)
 
+;; Doom theme has better integration with other packages
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-nord t))
+
 ;; Use ivy for completion of commands
 (use-package ivy
   :diminish
