@@ -1,8 +1,5 @@
 ;;(toggle-debug-on-error)
 
-(require 'server)
-(unless (server-running-p) (server-start))
-
 ;; Setup package manager and use-package
 (setq package-archives '(("org"       . "https://orgmode.org/elpa/")
                          ("gnu"       . "https://elpa.gnu.org/packages/")
