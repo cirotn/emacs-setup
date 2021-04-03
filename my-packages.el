@@ -1,5 +1,10 @@
+;; Hides minor modes from list to remove clutter
+(use-package diminish
+  :ensure t)
+
 ;; Use ivy for completion of commands
 (use-package ivy
+  :diminish
   :ensure t
   :config
   (ivy-mode t)
@@ -29,6 +34,7 @@
 
 ;; Undo-tree for storing and displaying multiple undo branches
 (use-package undo-tree
+  :diminish
   :ensure t
   :config
   ;; No trailing whitespace on undo-tree
@@ -88,6 +94,7 @@
 
 ;; Basic emacs auto-complete
 (use-package auto-complete
+  :diminish
   :ensure t
   :config
   (ac-config-default))
