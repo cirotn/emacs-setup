@@ -74,9 +74,22 @@
 (add-hook 'cmake-mode-hook (lambda() (modify-syntax-entry ?_ "w")))
 
 ;; Set compilation mode options
-(add-hook 'compilation-mode-hook (lambda ()
+(add-hook 'compilation-mode-hook (lambda()
                                    (toggle-truncate-lines)
                                    (setq show-trailing-whitespace nil)))
+
+;; Relative line numbers
+(setq display-line-numbers-type 'relative)
+
+;; Enable line numbers for some modes
+(dolist (mode '(text-mode-hook
+                prog-mode-hook
+                conf-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 1))))
+
+;; Override some modes which derive from the above
+(dolist (mode '(org-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 ;; Remove buffer still has clients error due to using C-x k with client-server
 ;; (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)

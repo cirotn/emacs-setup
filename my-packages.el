@@ -85,13 +85,6 @@
 (use-package iedit
   :ensure t)
 
-;; Use relative line numbers
-(use-package linum-relative
-  :ensure t
-  :config
-  (global-linum-mode t)
-  (linum-relative-on))
-
 ;; Basic emacs auto-complete
 (use-package auto-complete
   :diminish
