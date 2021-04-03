@@ -66,6 +66,8 @@
 ;; VI mode emulation
 (use-package evil
   :ensure t
+  :init
+  (setq evil-undo-system 'undo-tree)
   :config
   (evil-mode 1)
   ;; Make underscores part of a word
@@ -91,10 +93,7 @@
   ;; Make escape exit minibuffer instead of requiring Ctrl-g.
   ;; This is under evil because I think it needs to be loaded after evil
   ;; loads, but haven't verified that.
-  (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit)
-  ;; Evil requires that you choose an undo system
-  (define-key evil-normal-state-map "u" 'undo-tree-undo)
-  (define-key evil-normal-state-map (kbd "C-r") 'undo-tree-redo))
+  (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit))
 
 ;; Edit mulitple occurrences of a string in a buffer at once. Invoke using c-;.
 (use-package iedit
