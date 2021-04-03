@@ -52,7 +52,9 @@
   "wJ" 'buf-move-down
   "wK" 'buf-move-up
   "wH" 'buf-move-left
-  "wL" 'buf-move-right)
+  "wL" 'buf-move-right
+  ;; Balance windows
+  "w+" 'balance-windows)
 
 (global-set-key (kbd "C-c w 3") 'split-window-right)
 (global-set-key (kbd "C-c w 2") 'split-window-below)
@@ -67,6 +69,7 @@
 (global-set-key (kbd "C-c w L") 'buf-move-right)
 (global-set-key (kbd "C-c w K") 'buf-move-up)
 (global-set-key (kbd "C-c w J") 'buf-move-down)
+(global-set-key (kbd "C-c w +") 'balance-windows)
 
 ;; Lisp evaluation
 (evil-leader/set-key
