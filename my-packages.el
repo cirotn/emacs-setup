@@ -25,12 +25,21 @@
 (use-package swiper
   :ensure t)
 
+;; Provides description when invoking counsel-M-x. Use Alt-o + d to go function definition.
+(use-package ivy-rich
+  :ensure t
+  :after
+  (ivy)
+  :config
+  (ivy-rich-mode t))
+
 ;; Counsel provides a variety of functions using the same completion style as
 ;; ivy. Ivy only affects emacs functions that call completing-read-function,
 ;; counsel adds its own version of emacs commands that are not covered by ivy
 ;; alone. See counsel-faces for example, or counsel-git-grep.
 (use-package counsel
-  :ensure t)
+  :ensure t
+  :bind (("M-x" . counsel-M-x)))
 
 ;; Undo-tree for storing and displaying multiple undo branches
 (use-package undo-tree

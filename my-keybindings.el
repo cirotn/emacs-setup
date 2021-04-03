@@ -6,7 +6,7 @@
 
 ;; Execute
 (evil-leader/set-key
-  ":" 'execute-extended-command)
+  ":" 'counsel-M-x)
 
 (global-set-key (kbd "C-c :") 'execute-extended-command)
 
