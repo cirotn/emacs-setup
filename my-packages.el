@@ -105,13 +105,12 @@
   :ensure t)
 
 ;; Configurable status bar with a nice look
-(use-package powerline
+(use-package doom-modeline
   :ensure t
-  :config
-  ;; Using my own custom theme for powerline, but only in graphical displays
-  (require 'my-powerline-theme)
-  (if (display-graphic-p) (my-powerline-theme))
-  (setq powerline-default-separator 'box))
+  :init (doom-modeline-mode 1)
+  :custom
+  ;; Don't tell me it's UTF-8 (could improve by only hiding if settings are as expected)
+  (doom-modeline-buffer-encoding nil))
 
 ;; When switching windows, number them and ask for the destination
 (use-package ace-window
