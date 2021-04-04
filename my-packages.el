@@ -112,6 +112,9 @@
   ;; Don't tell me it's UTF-8 (could improve by only hiding if settings are as expected)
   (doom-modeline-buffer-encoding nil))
 
+;; doom modeline requires this, run M-x all-the-icons-install-fonts
+(use-package all-the-icons)
+
 ;; When switching windows, number them and ask for the destination
 (use-package ace-window
   :ensure t
