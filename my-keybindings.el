@@ -80,6 +80,13 @@
 (global-set-key (kbd "C-c w z") 'hydra-zoom/body)
 (global-set-key (kbd "C-c w s") 'hydra-splitter/body)
 
+;; LSP mode
+(evil-leader/set-key
+  "lD" 'lsp-find-definition
+  "ld" 'lsp-ui-peek-find-definitions
+  "lR" 'lsp-find-references
+  "lr" 'lsp-ui-peek-find-references)
+
 ;; Lisp evaluation
 (evil-leader/set-key
   "`e" 'eval-last-sexp

@@ -166,6 +166,8 @@
 ;; Also run pip install pyls-mypy and sudo apt install flake8.
 (use-package lsp-mode
   :ensure t
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :custom
   (lsp-pyls-plugins-flake8-enabled t)
   (lsp-headerline-breadcrumb-enable nil)
@@ -174,7 +176,16 @@
 
 (use-package lsp-ui
   :ensure t
-  :commands lsp-ui-mode)
+  :commands lsp-ui-mode
+  :custom
+  ;; Make help show within the window, not at the edge of the frame
+  (lsp-ui-doc-alignment 'window)
+  ;; Only show docstring using mouse cursor
+  (lsp-ui-doc-show-with-cursor nil)
+  ;; Disable sideline, distracting
+  (lsp-ui-sideline-enable nil)
+  ;; Don't highlight occurrences of the symbol at point
+  (lsp-enable-symbol-highlighting nil))
 
 ;; Use conda for python
 (use-package conda
