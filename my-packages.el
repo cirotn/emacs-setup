@@ -68,6 +68,9 @@
   (setq evil-undo-system 'undo-tree)
   :config
   (evil-mode 1)
+  ;; Undo system configuration above not quite working yet for redo
+  (define-key evil-normal-state-map "u" 'undo-tree-undo)
+  (define-key evil-normal-state-map (kbd "C-r") 'undo-tree-redo)
   ;; Make underscores part of a word
   (add-hook 'python-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
   (add-hook 'c++-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
