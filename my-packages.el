@@ -93,17 +93,6 @@
   ;; loads, but haven't verified that.
   (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit))
 
-;; Edit mulitple occurrences of a string in a buffer at once. Invoke using c-;.
-(use-package iedit
-  :ensure t)
-
-;; Basic emacs auto-complete
-(use-package auto-complete
-  :diminish
-  :ensure t
-  :config
-  (ac-config-default))
-
 ;; Swap buffers with another window. Also pulls in windmove, to move between
 ;; windows using a direction.
 (use-package buffer-move
@@ -173,17 +162,18 @@
   ("k" lambda() (hydra-move-splitter-up 1))
   ("l" lambda() (hydra-move-splitter-right 1)))
 
-;; The Emacs python development environment
-(use-package elpy
+;; Language server protocol mode. Requires pip install python-language-server.
+;; Also run pip install pyls-mypy and sudo apt install flake8.
+(use-package lsp-mode
   :ensure t
-  :init
-  (elpy-enable)
+  :custom
+  (lsp-pyls-plugins-flake8-enabled t)
   :config
-  (setq elpy-rpc-python-command "/home/ciro/miniconda3/bin/python")
-  (add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1)))
-  ;; Workaround for an issue that prints 'error in process filter' and hangs
-  ;; for a few seconds when typing temporarily unbalanced strings
-  (delete 'elpy-module-highlight-indentation elpy-modules))
+  (add-hook 'python-mode-hook #'lsp))
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
 
 ;; Use conda for python
 (use-package conda
