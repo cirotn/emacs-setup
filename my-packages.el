@@ -149,13 +149,6 @@
   ("+" text-scale-increase "in")
   ("-" text-scale-decrease "out"))
 
-(defhydra hydra-splitter()
-  "splitter"
-  ("h" lambda() (hydra-move-splitter-left 1))
-  ("j" lambda() (hydra-move-splitter-down 1))
-  ("k" lambda() (hydra-move-splitter-up 1))
-  ("l" lambda() (hydra-move-splitter-right 1)))
-
 ;; Language server protocol mode. Requires pip install python-language-server.
 ;; Also run pip install pyls-mypy and sudo apt install flake8.
 (use-package lsp-mode
