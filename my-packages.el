@@ -18,9 +18,7 @@
   (setq ivy-height 20)
   ;; Set the completion to be fuzzy for files and buffers
   (setq ivy-re-builders-alist
-        '((read-file-name-internal . ivy--regex-fuzzy)
-          (internal-complete-buffer . ivy--regex-fuzzy)
-          (t . ivy--regex-plus)))
+        '((t . ivy--regex-fuzzy)))
   ;; Adds recent files to buffer list
   (setq ivy-use-virtual-buffers t)
   ;; Configure display of number of options
