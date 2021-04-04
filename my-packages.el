@@ -42,7 +42,10 @@
 ;; alone. See counsel-faces for example, or counsel-git-grep.
 (use-package counsel
   :ensure t
-  :bind (("M-x" . counsel-M-x)))
+  :bind (("M-x" . counsel-M-x))
+  :config
+  ;; Don't start searches with ^
+  (setq ivy-initial-inputs-alist nil))
 
 ;; Undo-tree for storing and displaying multiple undo branches
 (use-package undo-tree
