@@ -122,15 +122,6 @@
       (global-set-key (kbd "C-c f r") 'clang-format-region)
       (global-set-key (kbd "C-c f b") 'clang-format-buffer)))
 
-;; Optionally show a ruler at column 80. Invoke using C-c w r.
-(use-package fill-column-indicator
-  :ensure t
-  :config
-  (setq fci-rule-column 80)
-  (setq fci-rule-width 4)
-  (setq fci-rule-color "darkblue")
-  (global-set-key (kbd "C-c w r") 'fci-mode))
-
 ;; Projectile makes it easy to find files in project. Invoke find file using
 ;; C-c p f and find file dwim (to find a file at point) using C-c p g.
 (use-package projectile
@@ -192,32 +183,5 @@
 ;; Yaml file mode
 (use-package yaml-mode
   :ensure t)
-
-;; Framemove was not working with package manager at one point
-;;(use-package framemove :ensure t
-;;  :config
-;;  (setq framemove-hook-into-windmove t))
-
-;; Replaced by ivy
-;;(use-package ido
-;;  :ensure t
-;;  :config
-;;  (ido-mode t)
-;;  ;; Disable automatic file name completion for recent files, this feature
-;;  ;; causes the directory to change awkwardly while typing a file name
-;;  (setq ido-auto-merge-work-directories-length -1)
-;;  (setq ido-enable-flex-matching t))
-;;
-;;(use-package ido-vertical-mode
-;;  :ensure t
-;;  :config
-;;  (ido-vertical-mode 1)
-;;  (setq ido-vertical-define-keys 'C-n-and-C-p-only))
-
-;; Replaced by projectile
-;; (use-package find-file-in-repository
-;;   :ensure t
-;;   :config
-;;   (global-set-key (kbd "C-x f") 'find-file-in-repository))
 
 (provide 'my-packages)
