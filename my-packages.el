@@ -168,6 +168,7 @@
   :ensure t
   :custom
   (lsp-pyls-plugins-flake8-enabled t)
+  (lsp-headerline-breadcrumb-enable nil)
   :config
   (add-hook 'python-mode-hook #'lsp))
 
