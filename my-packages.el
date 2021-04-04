@@ -145,6 +145,7 @@
 ;; Projectile makes it easy to find files in project. Invoke find file using
 ;; C-c p f and find file dwim (to find a file at point) using C-c p g.
 (use-package projectile
+  :diminish
   :ensure t
   :config
   ;; Install command shortcuts under C-c p
