@@ -154,6 +154,14 @@
   ("+" text-scale-increase "in")
   ("-" text-scale-decrease "out"))
 
+;; Help for keybindings
+(use-package which-key
+  :ensure t
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0.3))
+
 ;; Language server protocol mode. Requires pip install python-language-server.
 ;; Also run pip install pyls-mypy and sudo apt install flake8.
 (use-package lsp-mode
