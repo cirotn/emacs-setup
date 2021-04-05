@@ -80,6 +80,10 @@
 (global-set-key (kbd "C-c w z") 'hydra-zoom/body)
 (global-set-key (kbd "C-c w s") 'hydra-splitter/body)
 
+;; Yasnippets
+(evil-leader/set-key
+  "yi" 'yas-insert-snippet)
+
 ;; LSP mode
 (evil-leader/set-key
   "lD" 'lsp-find-definition
