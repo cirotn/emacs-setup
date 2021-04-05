@@ -6,7 +6,7 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-nord t))
+  (load-theme 'doom-vibrant t))
 
 ;; Use ivy for completion of commands
 (use-package ivy
@@ -171,6 +171,30 @@
   "zoom"
   ("+" text-scale-increase "in")
   ("-" text-scale-decrease "out"))
+
+(defhydra hydra-theme()
+  "theme"
+  ("a" (load-theme 'doom-acario-dark t) "acario-dark")
+  ("c" (load-theme 'doom-city-lights t) "city-lights")
+  ("C" (load-theme 'doom-oceanic-next t) "oceanic-next")
+  ("d" (load-theme 'doom-dark+ t) "dark+")
+  ("D" (load-theme 'doom-dracula t) "dracula")
+  ("f" (load-theme 'doom-fairy-floss t) "fairy-floss")
+  ("g" (load-theme 'doom-gruvbox t) "gruvbox")
+  ("G" (load-theme 'doom-spacegrey t) "spacegrey")
+  ("h" (load-theme 'doom-challenger-deep t) "challenger-deep")
+  ("I" (load-theme 'doom-Iosvkem t) "Iosvkem")
+  ("l" (load-theme 'doom-laserwave t) "laserwave")
+  ("m" (load-theme 'doom-material t) "material")
+  ("M" (load-theme 'doom-molokai t) "molokai")
+  ("n" (load-theme 'doom-nord t) "nord")
+  ("o" (load-theme 'doom-one t) "one")
+  ("O" (load-theme 'doom-opera t) "opera")
+  ("s" (load-theme 'doom-solarized-dark t) "solarized-dark")
+  ("S" (load-theme 'doom-sourcerer t) "sourcerer")
+  ("t" (load-theme 'doom-tomorrow-night t) "tomorrow-night")
+  ("v" (load-theme 'doom-vibrant t) "vibrant")
+  ("w" (load-theme 'wombat t) "wombat"))
 
 ;; Help for keybindings
 (use-package which-key
