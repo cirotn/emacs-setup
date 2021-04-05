@@ -59,6 +59,10 @@
 ;; Use space as a leader. Should come before evil.
 (use-package evil-leader
   :ensure t
+  :init
+  ;; Evil collection needs this set to nil before loading evil. Since this loads evil, need
+  ;; set this here to avoid a warning.
+  (setq evil-want-keybinding nil)
   :config
   (evil-leader/set-leader "<SPC>")
   (global-evil-leader-mode))
@@ -68,6 +72,7 @@
   :ensure t
   :after evil-leader
   :init
+  ;; Required by evil for undo and redo to work
   (setq evil-undo-system 'undo-tree)
   :config
   (evil-mode 1)
@@ -174,6 +179,16 @@
   :diminish which-key-mode
   :config
   (setq which-key-idle-delay 0.3))
+
+;; Git
+(use-package magit
+  :ensure t)
+
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 ;; Language server protocol mode. Requires pip install python-language-server.
 ;; Also run pip install pyls-mypy and sudo apt install flake8.
