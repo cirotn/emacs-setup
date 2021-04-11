@@ -177,6 +177,7 @@
 (defhydra hydra-theme()
   "theme"
   ("a" (load-theme 'doom-acario-dark t) "acario-dark")
+  ("A" (load-theme 'doom-acario-light t) "acario-light")
   ("c" (load-theme 'doom-city-lights t) "city-lights")
   ("C" (load-theme 'doom-oceanic-next t) "oceanic-next")
   ("d" (load-theme 'doom-dark+ t) "dark+")
