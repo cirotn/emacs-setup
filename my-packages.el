@@ -18,7 +18,9 @@
   (setq ivy-height 20)
   ;; Set the completion to be fuzzy for files and buffers
   (setq ivy-re-builders-alist
-        '((t . ivy--regex-fuzzy)))
+        '((swiper . ivy--regex-plus)
+          (counsel-git-grep-function . ivy--regex-plus)
+          (t . ivy--regex-fuzzy)))
   ;; Adds recent files to buffer list
   (setq ivy-use-virtual-buffers t)
   ;; Configure display of number of options
