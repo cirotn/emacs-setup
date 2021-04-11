@@ -49,6 +49,13 @@
   ;; Don't start searches with ^
   (setq ivy-initial-inputs-alist nil))
 
+;; Prescient makes completions take prior usage into account
+(use-package ivy-prescient
+  :ensure t
+  :after counsel
+  :config
+  (ivy-prescient-mode 1))
+
 ;; Undo-tree for storing and displaying multiple undo branches
 (use-package undo-tree
   :diminish
