@@ -77,8 +77,10 @@
 ;; Hydras
 (evil-leader/set-key
   "hz" 'hydra-zoom/body
-  "ht" 'hydra-theme/body)
+  "ht" 'hydra-theme/body
+  "hc" 'hydra-code/body)
 
+(global-set-key (kbd "C-c h c") 'hydra-code/body)
 (global-set-key (kbd "C-c h z") 'hydra-zoom/body)
 (global-set-key (kbd "C-c h t") 'hydra-theme/body)
 

@@ -188,13 +188,20 @@
   ("m" (load-theme 'doom-material t) "material")
   ("M" (load-theme 'doom-molokai t) "molokai")
   ("n" (load-theme 'doom-nord t) "nord")
+  ("N" (load-theme 'doom-nord-light t) "nord-light")
   ("o" (load-theme 'doom-one t) "one")
   ("O" (load-theme 'doom-opera t) "opera")
   ("s" (load-theme 'doom-solarized-dark t) "solarized-dark")
+  ("L" (load-theme 'doom-solarized-light t) "solarized-light")
   ("S" (load-theme 'doom-sourcerer t) "sourcerer")
   ("t" (load-theme 'doom-tomorrow-night t) "tomorrow-night")
   ("v" (load-theme 'doom-vibrant t) "vibrant")
   ("w" (load-theme 'wombat t) "wombat"))
+
+(defhydra hydra-code()
+  "code"
+  ("b" blacken-buffer "blacken")
+  ("e" conda-env-activate "conda activate"))
 
 ;; Help for keybindings
 (use-package which-key
