@@ -6,7 +6,10 @@
 (defun kill-all-buffers ()
     "Kill all buffers."
    (interactive)
-    (mapc 'kill-buffer (buffer-list)))
+    (mapc 'kill-buffer
+          (seq-filter
+           (lambda(buf) (not (string-prefix-p "*" (buffer-name buf)))) ;; filter function
+           (buffer-list)))) ;; list of buffers
 
 (defun prompt-user-for-word(prompt)
   "Prompts for input from the user, using the word at point as default value."
