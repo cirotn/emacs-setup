@@ -124,8 +124,7 @@
   :config
   (yas-global-mode 1)
   (define-key yas-minor-mode-map (kbd "C-c y") #'yas-expand)
-  (setq yas-snippet-dirs '("~/emacs.d/snippets"
-                           "~/yasnippets"))
+  (setq yas-snippet-dirs '("~/yasnippets"))
   (yas-reload-all))
 
 (use-package yasnippet-snippets
