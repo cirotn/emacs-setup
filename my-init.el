@@ -18,6 +18,7 @@
 (require 'git-util)
 (require 'grep-util)
 (require 'python-util)
+(require 'my-hydras)
 (require 'my-keybindings)
 (require 'my-preferences)
 

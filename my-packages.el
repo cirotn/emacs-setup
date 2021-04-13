@@ -175,43 +175,6 @@
 (use-package hydra
   :ensure t)
 
-(defhydra hydra-zoom()
-  "zoom"
-  ("+" text-scale-increase "in")
-  ("-" text-scale-decrease "out"))
-
-(defhydra hydra-theme()
-  "theme"
-  ("a" (load-theme 'doom-acario-dark t) "acario-dark")
-  ("A" (load-theme 'doom-acario-light t) "acario-light")
-  ("c" (load-theme 'doom-city-lights t) "city-lights")
-  ("C" (load-theme 'doom-oceanic-next t) "oceanic-next")
-  ("d" (load-theme 'doom-dark+ t) "dark+")
-  ("D" (load-theme 'doom-dracula t) "dracula")
-  ("f" (load-theme 'doom-fairy-floss t) "fairy-floss")
-  ("g" (load-theme 'doom-gruvbox t) "gruvbox")
-  ("G" (load-theme 'doom-spacegrey t) "spacegrey")
-  ("h" (load-theme 'doom-challenger-deep t) "challenger-deep")
-  ("I" (load-theme 'doom-Iosvkem t) "Iosvkem")
-  ("l" (load-theme 'doom-laserwave t) "laserwave")
-  ("m" (load-theme 'doom-material t) "material")
-  ("M" (load-theme 'doom-molokai t) "molokai")
-  ("n" (load-theme 'doom-nord t) "nord")
-  ("N" (load-theme 'doom-nord-light t) "nord-light")
-  ("o" (load-theme 'doom-one t) "one")
-  ("O" (load-theme 'doom-opera t) "opera")
-  ("s" (load-theme 'doom-solarized-dark t) "solarized-dark")
-  ("L" (load-theme 'doom-solarized-light t) "solarized-light")
-  ("S" (load-theme 'doom-sourcerer t) "sourcerer")
-  ("t" (load-theme 'doom-tomorrow-night t) "tomorrow-night")
-  ("v" (load-theme 'doom-vibrant t) "vibrant")
-  ("w" (load-theme 'wombat t) "wombat"))
-
-(defhydra hydra-code()
-  "code"
-  ("b" blacken-buffer "blacken")
-  ("e" conda-env-activate "conda activate"))
-
 ;; Help for keybindings
 (use-package which-key
   :ensure t
