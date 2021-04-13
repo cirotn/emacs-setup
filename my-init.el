@@ -18,7 +18,6 @@
 (require 'git-util)
 (require 'grep-util)
 (require 'python-util)
-(require 'usrp)
 (require 'my-keybindings)
 (require 'my-preferences)
 
