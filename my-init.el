@@ -15,7 +15,6 @@
 (require 'my-packages)
 (require 'my-config)
 (require 'util)
-(require 'git-util)
 (require 'grep-util)
 (require 'my-hydras)
 (require 'my-keybindings)
