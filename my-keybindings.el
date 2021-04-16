@@ -74,15 +74,21 @@
 (global-set-key (kbd "C-c w o") 'ace-window)
 (global-set-key (kbd "C-c w +") 'balance-windows)
 
+;; Help
+(evil-leader/set-key
+  "hv" 'describe-variable
+  "hf" 'describe-function
+  "hk" 'describe-key)
+
 ;; Hydras
 (evil-leader/set-key
-  "hz" 'hydra-zoom/body
-  "ht" 'hydra-theme/body
-  "hc" 'hydra-code/body)
+  "<RET>z" 'hydra-zoom/body
+  "<RET>t" 'hydra-theme/body
+  "<RET>c" 'hydra-code/body)
 
-(global-set-key (kbd "C-c h c") 'hydra-code/body)
-(global-set-key (kbd "C-c h z") 'hydra-zoom/body)
-(global-set-key (kbd "C-c h t") 'hydra-theme/body)
+(global-set-key (kbd "C-c <RET> c") 'hydra-code/body)
+(global-set-key (kbd "C-c <RET> z") 'hydra-zoom/body)
+(global-set-key (kbd "C-c <RET> t") 'hydra-theme/body)
 
 ;; Yasnippets
 (evil-leader/set-key
