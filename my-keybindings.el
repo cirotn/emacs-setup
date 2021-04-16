@@ -109,6 +109,12 @@
 (global-set-key (kbd "C-c ` e") 'eval-last-sexp)
 (global-set-key (kbd "C-c ` r") 'eval-region)
 
+;; Bookmarks
+(evil-leader/set-key
+  "rm" 'bookmark-set
+  "rb" 'bookmark-jump
+  "rl" 'bookmark-bmenu-list)
+
 ;;  'toggle-truncate-lines
 ;;  'toggle-show-trailing-ws
 
