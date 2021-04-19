@@ -115,16 +115,12 @@
   "rb" 'bookmark-jump
   "rl" 'bookmark-bmenu-list)
 
-;;  'toggle-truncate-lines
-;;  'toggle-show-trailing-ws
-
-;; Keymaps for python
-;;(global-set-key (kbd "C-c p n") 'python-util-new-empty-buffer)
-;;(global-set-key (kbd "C-c p d") 'python-debug-with-pdb)
-
-;; Keymaps for etags
-;;(global-set-key (kbd "C-c t l") 'etags-select-find-tag-at-point)
-;;(global-set-key (kbd "C-c 4 t l") 'etags-select-find-tag)
+;; Orgmode
+(evil-leader/set-key
+  "ob" '(lambda() (interactive) (find-file "~/orgmode/bookmarks.org"))
+  "ot" '(lambda() (interactive) (find-file "~/orgmode/tasks.org"))
+  "os" '(lambda() (interactive) (find-file "~/orgmode/sticky_notes.org"))
+  "oo" 'org-open-at-point)
 
 ;; Disable this to avoid hitting it accidentally, evil has its own keys for this
 (global-unset-key (kbd "C-x C-c"))
