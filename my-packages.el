@@ -187,6 +187,7 @@
 (use-package magit
   :ensure t)
 
+;; Evil keybindings in various modes
 (use-package evil-collection
   :after evil
   :ensure t
@@ -235,5 +236,64 @@
 ;; Yaml file mode
 (use-package yaml-mode
   :ensure t)
+
+;; Org mode
+(defun org-mode-setup ()
+  (org-indent-mode)
+  (auto-fill-mode 0)
+  (visual-line-mode 1)
+  (setq evil-auto-indent nil))
+
+(use-package org
+  :ensure t
+  :hook
+  (org-mode . org-mode-setup)
+  :config
+  ;; Sets archive as a file for refiling
+  (setq org-refile-targets '(("archive.org" :maxlevel . 1)))
+  ;; Save org buffers after refiling
+  (advice-add 'org-refile :after 'org-save-all-org-buffers)
+  ;; Hides the asterisks or underscores in bold and italic
+  (setq org-hide-emphasis-markers t)
+  ;; Files form which agenda gets info
+  (setq org-agenda-files '("~/orgmode/tasks.org")))
+
+;; Better bullet icons
+(use-package org-bullets
+  :ensure t
+  :after org
+  :hook (org-mode . org-bullets-mode))
+
+;; Dired preferences
+(use-package dired
+  :ensure nil ;; built-in, don't go looking for it
+  :custom
+  (
+   ;; Make the order of file listed put directories first, and leave out user info
+   (dired-listing-switches "-agho --group-directories-first")
+   ;; Use trash
+   (delete-by-moving-to-trash t))
+  :config
+  ;; Fast directory navigation with vi left and right
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "h" 'dired-single-up-directory
+    "l" 'dired-single-buffer))
+
+;; Single buffer in dired
+(use-package dired-single
+  :ensure t)
+
+;; Dired icons
+(use-package all-the-icons-dired
+  :ensure t
+  :hook (dired-mode . all-the-icons-dired-mode))
+
+;; Hide dotfiles in dired
+(use-package dired-hide-dotfiles
+  :ensure t
+  :hook (dired-mode . dired-hide-dotfiles-mode)
+  :config
+  (evil-collection-define-key 'normal 'dired-mode-map
+                              "H" 'dired-hide-dotfiles-mode))
 
 (provide 'my-packages)
