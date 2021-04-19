@@ -36,6 +36,8 @@
 (defhydra hydra-code()
   "code"
   ("b" blacken-buffer "blacken")
-  ("e" conda-env-activate "conda activate"))
+  ("e" conda-env-activate "conda activate")
+  ("t" toggle-truncate-lines "toggle truncate lines")
+  ("w" toggle-show-trailing-ws "toggle trailing whitespace"))
 
 (provide 'my-hydras)
