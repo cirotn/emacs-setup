@@ -75,6 +75,9 @@
 ;; Turn-off trailing whitespace highlight in org-agenda
 (add-hook 'org-agenda-mode-hook (lambda() (setq show-trailing-whitespace nil)))
 
+;; Turn-off trailing whitespace highlight in calendar
+(add-hook 'calendar-mode-hook (lambda() (setq show-trailing-whitespace nil)))
+
 ;; Set compilation mode options
 (add-hook 'compilation-mode-hook (lambda()
                                    (toggle-truncate-lines)
