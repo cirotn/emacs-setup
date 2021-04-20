@@ -116,11 +116,28 @@
   "rl" 'bookmark-bmenu-list)
 
 ;; Orgmode
+(defun org-bookmarks ()
+  (interactive)
+  (find-file "~/orgmode/bookmarks.org"))
+
+(defun org-tasks ()
+  (interactive)
+  (find-file "~/orgmode/tasks.org"))
+
+(defun org-sticky-notes ()
+  (interactive)
+  (find-file "~/orgmode/sticky_notes.org"))
+
 (evil-leader/set-key
-  "ob" '(lambda() (interactive) (find-file "~/orgmode/bookmarks.org"))
-  "ot" '(lambda() (interactive) (find-file "~/orgmode/tasks.org"))
-  "os" '(lambda() (interactive) (find-file "~/orgmode/sticky_notes.org"))
+  "ob" 'org-bookmarks
+  "ot" 'org-tasks
+  "os" 'org-sticky-notes
   "oo" 'org-open-at-point)
+
+(global-set-key (kbd "C-c o b") 'org-bookmarks)
+(global-set-key (kbd "C-c o t") 'org-tasks)
+(global-set-key (kbd "C-c o s") 'org-sticky-notes)
+(global-set-key (kbd "C-c o o") 'org-open-at-point)
 
 ;; Disable this to avoid hitting it accidentally, evil has its own keys for this
 (global-unset-key (kbd "C-x C-c"))
