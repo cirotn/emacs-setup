@@ -111,7 +111,16 @@
   ;; Make escape exit minibuffer instead of requiring Ctrl-g.
   ;; This is under evil because I think it needs to be loaded after evil
   ;; loads, but haven't verified that.
-  (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit))
+  (define-key ivy-minibuffer-map [escape] 'minibuffer-keyboard-quit)
+  ;; Use ctrl rather than meta for org
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-j") 'org-metadown)
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-k") 'org-metaup)
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-l") 'org-metaright)
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "C-h") 'org-metaleft)
+  (evil-define-key '(normal insert visual) org-mode-map (kbd "<C-return>") 'org-meta-return)
+  ;; Use t in normal mode for org-todo
+  (evil-define-key 'normal org-mode-map (kbd "t") 'org-todo))
+
 
 ;; Swap buffers with another window. Also pulls in windmove, to move between
 ;; windows using a direction.
