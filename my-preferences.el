@@ -102,16 +102,4 @@
 (dolist (mode '(org-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;; Remove buffer still has clients error due to using C-x k with client-server
-;; (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
-
-;; Semantic
-;; (semantic-mode 1)
-
-;; (defun add-semantic-to-autocomplete()
-;;   (add-to-list 'ac-sources 'ac-source-semantic))
-
-;; (if (package-installed-p 'auto-complete)
-;;     (add-hook 'c-mode-common-hook 'add-semantic-to-autocomplete))
-
 (provide 'my-preferences)
