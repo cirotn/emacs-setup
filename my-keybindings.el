@@ -84,11 +84,13 @@
 (evil-leader/set-key
   "<RET>z" 'hydra-zoom/body
   "<RET>t" 'hydra-theme/body
-  "<RET>c" 'hydra-code/body)
+  "<RET>c" 'hydra-code/body
+  "<RET><RET>" 'hydra-all/body)
 
 (global-set-key (kbd "C-c <RET> c") 'hydra-code/body)
 (global-set-key (kbd "C-c <RET> z") 'hydra-zoom/body)
 (global-set-key (kbd "C-c <RET> t") 'hydra-theme/body)
+(global-set-key (kbd "C-c <RET> <RET>") 'hydra-all/body)
 
 ;; Yasnippets
 (evil-leader/set-key

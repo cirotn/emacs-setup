@@ -40,4 +40,13 @@
   ("t" toggle-truncate-lines "toggle truncate lines")
   ("w" toggle-show-trailing-ws "toggle trailing whitespace"))
 
+(defhydra hydra-all()
+  "all"
+  ("b" blacken-buffer "blacken")
+  ("e" conda-env-activate "conda activate")
+  ("t" toggle-truncate-lines "toggle truncate lines")
+  ("w" toggle-show-trailing-ws "toggle trailing whitespace")
+  ("+" text-scale-increase "zoom in")
+  ("-" text-scale-decrease "zoom out"))
+
 (provide 'my-hydras)
