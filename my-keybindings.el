@@ -134,12 +134,16 @@
   "ob" 'org-bookmarks
   "ot" 'org-tasks
   "os" 'org-sticky-notes
-  "oo" 'org-open-at-point)
+  "oo" 'org-open-at-point
+  "ol" 'org-store-link
+  "oi" 'org-insert-link)
 
 (global-set-key (kbd "C-c o b") 'org-bookmarks)
 (global-set-key (kbd "C-c o t") 'org-tasks)
 (global-set-key (kbd "C-c o s") 'org-sticky-notes)
 (global-set-key (kbd "C-c o o") 'org-open-at-point)
+(global-set-key (kbd "C-c o l") 'org-store-link)
+(global-set-key (kbd "C-c o i") 'org-insert-link)
 
 ;; Disable this to avoid hitting it accidentally, evil has its own keys for this
 (global-unset-key (kbd "C-x C-c"))
