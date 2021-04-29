@@ -26,8 +26,14 @@
 ;; Set window title to currently visited buffer name instead of just "emacs"
 (setq frame-title-format "%b")
 
-;; Remove annoying beep, replace with a screen flash
-(setq visible-bell 1)
+;; Remove annoying beep, replace with a subtle flash of the mode line
+(setq ring-bell-function
+      (lambda ()
+        (let ((orig-fg (face-foreground 'mode-line)))
+          (set-face-foreground 'mode-line "#F2804F")
+          (run-with-idle-timer 0.1 nil
+                               (lambda (fg) (set-face-foreground 'mode-line fg))
+                               orig-fg))))
 
 ;; Truncate long lines by default
 (setq-default truncate-lines t)
