@@ -96,6 +96,7 @@
   (add-hook 'package-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
   (add-hook 'yaml-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
   (add-hook 'rust-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
+  (add-hook 'org-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
   ;; Make hyphen part of a word in lisp
   (add-hook 'emacs-lisp-mode-hook '(lambda () (modify-syntax-entry ?- "w")))
   ;; Make asterisk not include \\<...\\>
