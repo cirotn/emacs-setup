@@ -214,6 +214,10 @@
   :custom
   (lsp-pyls-plugins-flake8-enabled t)
   (lsp-headerline-breadcrumb-enable nil)
+  ;; Disable hover tips
+  (lsp-ui-doc-enable nil)
+  ;; Disable minibuffer doc strings
+  (lsp-eldoc-enable-hover nil)
   :config
   (add-hook 'python-mode-hook #'lsp))
 
@@ -246,7 +250,8 @@
   :ensure t
   :init
   (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
-  (setq conda-env-home-directory (expand-file-name "~/miniconda3")))
+  (setq conda-env-home-directory (expand-file-name "~/miniconda3"))
+  (conda-env-autoactivate-mode))
 
 ;; Python formatting
 (use-package blacken
