@@ -6,7 +6,7 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-vibrant t))
+  (load-theme 'doom-fairy-floss t))
 
 ;; Use ivy for completion of commands
 (use-package ivy
