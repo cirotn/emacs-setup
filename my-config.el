@@ -22,6 +22,8 @@
  (t
   ;; Setup for other systems (Linux)
   (progn
+    (setq exec-path (append exec-path '("/home/ciro/miniconda3/bin/")))
+    (setq python-shell-interpreter "/home/ciro/miniconda3/bin/python3")
     (global-set-key (kbd "C-c o o") (lambda() (interactive) (find-file "~/orgmode"))))))
 
 (provide 'my-config)

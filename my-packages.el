@@ -213,6 +213,7 @@
   (setq lsp-keymap-prefix "C-c l")
   :custom
   (lsp-pyls-plugins-flake8-enabled t)
+  (lsp-pyls-plugins-pycodestyle-max-line-length 120)
   (lsp-headerline-breadcrumb-enable nil)
   ;; Disable hover tips
   (lsp-ui-doc-enable nil)
