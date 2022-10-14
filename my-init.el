@@ -19,6 +19,5 @@
 (require 'my-hydras)
 (require 'my-keybindings)
 (require 'my-preferences)
-(require 'my-private-config)
 
 (put 'dired-find-alternate-file 'disabled nil)
