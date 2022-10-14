@@ -237,15 +237,6 @@
   ;; Spinner seems to get stuck in some conditions
   (lsp-progress-via-spinner nil))
 
-;; Debugger for python
-(use-package dap-mode
-  :ensure t
-  :config
-  (require 'dap-python)
-  (dap-ui-mode)
-  ;; Start hydra on a breakpoint
-  (add-hook 'dap-stopped-hook (lambda (arg) (call-interactively #'dap-hydra))))
-
 ;; Use conda for python
 (use-package conda
   :ensure t
