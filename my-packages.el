@@ -129,18 +129,6 @@
 (use-package buffer-move
   :ensure t)
 
-;; Snippets
-(use-package yasnippet
-  :ensure t
-  :config
-  (yas-global-mode 1)
-  (define-key yas-minor-mode-map (kbd "C-c y") #'yas-expand)
-  (setq yas-snippet-dirs '("~/yasnippets"))
-  (yas-reload-all))
-
-(use-package yasnippet-snippets
-  :ensure t)
-
 ;; Configurable status bar with a nice look
 (use-package doom-modeline
   :ensure t
