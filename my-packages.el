@@ -159,13 +159,13 @@
   (global-set-key (kbd "C-x o") 'ace-window))
 
 ;; Use clang-format if not on Windows
-(if (not (string-equal system-type "windows-nt"))
-    (use-package clang-format
-      :ensure t
-      :config
-      (setq clang-format-executable "clang-format-6.0")
-      (global-set-key (kbd "C-c f r") 'clang-format-region)
-      (global-set-key (kbd "C-c f b") 'clang-format-buffer)))
+;; (if (not (string-equal system-type "windows-nt"))
+;;     (use-package clang-format
+;;       :ensure t
+;;       :config
+;;       (setq clang-format-executable "clang-format-6.0")
+;;       (global-set-key (kbd "C-c f r") 'clang-format-region)
+;;       (global-set-key (kbd "C-c f b") 'clang-format-buffer)))
 
 ;; Projectile makes it easy to find files in project. Invoke find file using
 ;; C-c p f and find file dwim (to find a file at point) using C-c p g.
