@@ -224,6 +224,8 @@
   (lsp-ui-sideline-enable nil)
   ;; Don't highlight occurrences of the symbol at point
   (lsp-enable-symbol-highlighting nil)
+  ;; Don't show multiline signature and function doc in minibuffer
+  (lsp-signature-auto-activate nil)
   ;; Spinner seems to get stuck in some conditions
   (lsp-progress-via-spinner nil))
 
