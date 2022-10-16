@@ -229,14 +229,6 @@
   ;; Spinner seems to get stuck in some conditions
   (lsp-progress-via-spinner nil))
 
-;; Use conda for python
-(use-package conda
-  :ensure t
-  :init
-  (setq conda-anaconda-home (expand-file-name "~/miniconda3"))
-  (setq conda-env-home-directory (expand-file-name "~/miniconda3"))
-  (conda-env-autoactivate-mode))
-
 ;; Python formatting
 (use-package blacken
   :ensure t
