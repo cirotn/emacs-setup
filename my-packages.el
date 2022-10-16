@@ -202,6 +202,8 @@
   :custom
   (lsp-pyls-plugins-flake8-enabled t)
   (lsp-pyls-plugins-pycodestyle-max-line-length 120)
+  (lsp-pyls-plugins-pycodestyle-ignore "E203")
+  (lsp-pyls-plugins-mccabe-enabled nil)
   (lsp-headerline-breadcrumb-enable nil)
   ;; Disable hover tips
   (lsp-ui-doc-enable nil)
